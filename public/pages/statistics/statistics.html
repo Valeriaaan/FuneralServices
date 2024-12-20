@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../../resources/ico/ico.png">
+    <title>Smart Ticketing System</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../resources/style/style.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <div class="wrapper">
+
+        <!-- Sidebar -->
+        <div class="position-sticky sticky-top h-100">
+            <div id="side-nav"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="container-fluid">
+            <div class="row g-4 mb-3">
+                <div class="row flex-nowrap mb-3">
+                    <h4 class="fw-bold">Statistics</h4>
+                </div>    
+
+                <!-- Daily Apprehensions Chart -->
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Individuals Apprehended (Daily)</h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="dailyChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monthly Apprehensions Chart -->
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Individuals Apprehended (Monthly)</h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="monthlyChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yearly Apprehensions Chart -->
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Individuals Apprehended (Yearly)</h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="yearlyChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Location Apprehensions Chart -->
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Apprehensions by Location</h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="locationChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-3">
+
+                <!-- Violations per Month Chart -->
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Violations Counts</h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="violationsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recommendations Card -->
+                <div class="col-md-6">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="card-title">Recommendations</h5>
+                            </div>
+                            <div class="card-body">
+                                <p id="recommendationText" class="text-muted">
+                                    Recommendations based on the statistics will appear here soon.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Imports -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js" type="module"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js" type="module"></script>
+
+    <!-- App Configuration and Logic -->
+    <script src="../../resources/script/config.js" type="module"></script>
+    <script src="../../resources/script/script.js" type="module"></script>
+    <script src="../statistics/script/script.js" type="module"></script>
+
+    <!-- Error Logging -->
+    <script>
+        window.addEventListener('error', function (e) {
+            console.error('Error loading script or resource:', e);
+        });
+    </script>
+</body>
+
+</html>

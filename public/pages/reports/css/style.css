@@ -1,0 +1,105 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.title {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.row-body {
+    display: flex;
+    flex-direction: column; /* Stacked layout by default */
+    gap: 20px; /* Increased gap between tables */
+    justify-content: flex-start;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.paid, .unpaid {
+    flex: 1;
+    width: 100%; /* Ensure the tables take up the full width of the container */
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    overflow: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.table-container {
+    max-height: 100%; /* Prevent vertical scroll */
+    overflow-x: auto; /* Allow horizontal scrolling if content is too wide */
+}
+
+.table {
+    width: 100%;
+    table-layout: fixed; /* Ensure equal column widths */
+    font-size: 0.8rem; /* Reduce text size for fitting */
+    border-collapse: collapse;
+}
+
+.btn {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.4rem;
+    min-width: 30px;
+    display: inline-block;
+}
+
+.table th, .table td {
+    padding: 0.4rem; /* Compact padding */
+    text-align: center; /* Center-align text */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Prevent content overflow */
+    text-overflow: ellipsis; /* Show ellipsis for long content */
+    border: 1px solid #dee2e6;
+    font-size: 0.7rem; /* Small font size for compact layout */
+}
+
+.table thead {
+    background-color: #f1f1f1;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Totals Styling */
+#totalPaidAmount, #totalUnpaidAmount {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .row-body {
+        flex-direction: column; /* Stack tables vertically on small screens */
+    }
+
+    .paid, .unpaid {
+        width: 100%; /* Allow the tables to take full width when stacked */
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .table {
+        font-size: 0.75rem; /* Reduce text size for small screens */
+    }
+}
+
+@media (max-width: 768px) {
+    h4 {
+        font-size: 1rem;
+    }
+
+    #totalUnpaidAmount,
+    #totalPaidAmount {
+        font-size: 1.2rem; /* Adjust font size for smaller screens */
+        margin-bottom: 10px; /* Add margin between the amounts */
+    }
+}
